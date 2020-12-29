@@ -1,0 +1,39 @@
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+      <input class="form-control mr-sm-2" type="search" 
+      ngModel
+      #name1="ngModel"
+      placeholder="Search" aria-label="Search"  name="name1">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search</button>
+    </form>
+  </nav>
+  <div class="container">
+      <table class="table">
+          <tr>
+          <th>title</th>
+      
+           <th>Authors</th>
+          </tr>
+          <tr>
+            <td>
+              <ul>
+          <li *ngFor="let user of data">
+              {{user.volumeInfo.title}}
+          </li>
+        </ul>
+    </td>
+        
+            <td>
+              <ul>
+          <li *ngFor="let user of data">
+              {{user.volumeInfo. authors}}
+          </li>
+        </ul>
+    </td>
+        </tr>
+       
+        </table>
+     
+   </div>
+ 
